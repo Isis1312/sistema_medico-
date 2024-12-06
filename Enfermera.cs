@@ -12,9 +12,9 @@ namespace sistema_medico
         public string Depertamento { get { return departamento; }set { departamento = value; } }
                
         
-        public Enfermera(string a, int b, string c, string d) : base(a, b, c)
+        public Enfermera(string _nombre,string _apellido, int _cedula, string _cargo, string _departamento, int _numExpe) : base(_nombre, _apellido, _cedula, _cargo, _numExpe)
         {
-            departamento = d;
+            departamento = _departamento;
         }
         
         //metodo propio
@@ -26,9 +26,11 @@ namespace sistema_medico
         //metodo de la  clase entidad
         public override void mostarDatos()
         {
-            Console.WriteLine($"Nombre: {Nombre}");
+            Console.WriteLine("Dato ingresados");
+            Console.WriteLine($"{Nombre} {Apellido}");
             Console.WriteLine($"Cedula: {Cedula}");
             Console.WriteLine($"Especialidad: {Cargo}");
+            Console.WriteLine($"Numero expediente del paciente: {NumExpe}");
             Console.WriteLine($"Departamento al que pertenece: {Depertamento}");
         }
         public override void RecetarMe()
@@ -38,17 +40,17 @@ namespace sistema_medico
         //interfaz
         public void administrarMedicamento()
         {
-            Console.WriteLine("Inyectando medicamento");
+            Console.WriteLine($"Inyectando medicamento al paciente del expendiete {NumExpe}");
         }
 
         public void atenderPaciente()
         {
-            Console.WriteLine("Atendiendo al paciente");
+            Console.WriteLine($"Atendiendo al paciente del expendiete {NumExpe}");
         }
 
         public void ParticiparEnCirugia()
         {
-            Console.WriteLine("Preparando instrumentos en la cirugía.");
+            Console.WriteLine($"{Nombre} {Apellido}, perteneciente al departamento {Depertamento} esta preparando instrumentos en la cirugía.");
         }
     }
 }

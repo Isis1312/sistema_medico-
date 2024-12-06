@@ -12,22 +12,23 @@ namespace sistema_medico
         public int NumerodeAmbu { get { return numerodeAmbu; } set { numerodeAmbu = value; } }
 
         //constructor
-        public Paramedico(string a, int b, string c, int d) : base (a,b,c)
+        public Paramedico(string _nombre,string _apellido, int _cedula, string _cargo,int _numExpe, int _numeroAmb) : base(_nombre, _apellido, _cedula, _cargo, _numExpe)
         {
-            numerodeAmbu = d;
+            numerodeAmbu = _numeroAmb;
         }
         
         //metodos propio
         public void realizarPrimerosAuxilios()
         {
-            Console.WriteLine("Realizando primeros auxilios al paciente");
+            Console.WriteLine($"Realizando primeros auxilios al paciente en la ambulacia numero {NumerodeAmbu}");
         }
 
 
         //metodos dela  clase entidad
         public override void mostarDatos()
         {
-            Console.WriteLine($"Nombre: {Nombre}");
+            Console.WriteLine("Dato ingresados");
+            Console.WriteLine($"{Nombre} {Apellido}");
             Console.WriteLine($"Cedula: {Cedula}");
             Console.WriteLine($"Especialidad: {Cargo}");
             Console.WriteLine($"Numero de ambulancia {NumerodeAmbu}");
@@ -41,12 +42,12 @@ namespace sistema_medico
         //interfaz
         public void administrarMedicamento()
         {
-            Console.WriteLine("Adminstrando medicamento en la ambulancia");
+            Console.WriteLine($"Administrando medicamento en la ambulancia numero {NumerodeAmbu}");
         }
 
         public void atenderPaciente()
         {
-            Console.WriteLine("Atendiendo al peciente en la ambulancia");
+            Console.WriteLine($"Atendiendo al peciente en la ambulancia numero {NumerodeAmbu}");
         }
     }
 }
